@@ -15,7 +15,18 @@ export default function App() {
         title: '5 Гуртожиток',
         coordinate: { latitude: 49.827891, longitude:  24.068852, },
         description: 'Тут живе Тарас',
-    }]);
+    },
+       {
+       title: 'Львівська пивоварня',
+       coordinate: { latitude: 49.848370, longitude:  24.017891, },
+       description: 'Тут живе Святослав',
+   },
+       {
+           title: "Vako's house",
+           coordinate: { latitude: 41.722471, longitude: 44.739959 },
+           description: 'Тут живе Вако',
+       }
+   ]);
    const [isModalOpened, setIsModalOpened] = useState(false)
    const [region, setRegion] = useState({
        latitude: 49.827891,
@@ -76,35 +87,35 @@ export default function App() {
             }) }
         </MapView>
       <StatusBar theme="auto"/>
-        <View style={styles.centeredView}>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={false} //!
-                onRequestClose={ () => {
-                    Alert.alert("Modal has been closed.");
-                    setIsModalOpened(!isModalOpened);
-                }}
-            >
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Hello World!</Text>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setIsModalOpened(!isModalOpened)}
-                        >
-                            <Text style={styles.textStyle}>Hide Modal</Text>
-                        </Pressable>
-                    </View>
-                </View>
-            </Modal>
-            <Pressable
-                style={[styles.button, styles.buttonOpen]}
-                onPress={() => setIsModalOpened(true)}
-            >
+        {/*<View style={styles.centeredView}>*/}
+        {/*    <Modal*/}
+        {/*        animationType="slide"*/}
+        {/*        transparent={true}*/}
+        {/*        visible={false} //!*/}
+        {/*        onRequestClose={ () => {*/}
+        {/*            Alert.alert("Modal has been closed.");*/}
+        {/*            setIsModalOpened(!isModalOpened);*/}
+        {/*        }}*/}
+        {/*    >*/}
+        {/*        <View style={styles.centeredView}>*/}
+        {/*            <View style={styles.modalView}>*/}
+        {/*                <Text style={styles.modalText}>Hello World!</Text>*/}
+        {/*                <Pressable*/}
+        {/*                    style={[styles.button, styles.buttonClose]}*/}
+        {/*                    onPress={() => setIsModalOpened(!isModalOpened)}*/}
+        {/*                >*/}
+        {/*                    <Text style={styles.textStyle}>Hide Modal</Text>*/}
+        {/*                </Pressable>*/}
+        {/*            </View>*/}
+        {/*        </View>*/}
+        {/*    </Modal>*/}
+        {/*    <Pressable*/}
+        {/*        style={[styles.button, styles.buttonOpen]}*/}
+        {/*        onPress={() => setIsModalOpened(true)}*/}
+        {/*    >*/}
 
-            </Pressable>
-        </View>
+        {/*    </Pressable>*/}
+        {/*</View>*/}
     </_MapView>
   );
 }
@@ -112,7 +123,7 @@ export default function App() {
 
 
 const _MapView = styled.View`
-  
+  width: 100%;
   height: 100%;
 `;
 const HeaderWrapperJotun = styled.View`
@@ -124,8 +135,8 @@ const HeaderWrapperJotun = styled.View`
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
-        height: 400,
-        width: 400,
+        height: 100,
+        width: 100,
         justifyContent: "flex-end",
         alignItems: "center",
     },
